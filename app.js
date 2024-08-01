@@ -13,7 +13,8 @@ const connection = mysql.createConnection({
     host: 'alwaysdata.com',
     user: '371142',
     password: 'P@ssword2905!',
-    database: 'judedadood_c237hotelbooking'
+    database: 'judedadood_c237hotelbooking',
+    port: 3307
 });
 
 
