@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Edit Booking</title>
+
+    <style>
+        h2 {
+            margin-left: 20px;
+        }
+
+        img {
+            margin-left: 550px;
+        }
+
+        form {
+            margin-left: 400px;
+            text-align: center;
+        }
+
+        form {
+            width: 700px;
+            font-size: larger;
+        }
+
+        button {
+            width: 280px;
+            height: 40px;
+            font-size: larger;
+            margin-left: 210px;
+            background-color: antiquewhite;
+            border: solid 1px gray;
+        }
+
+        input {
+            height: 25px;
+            background-color: antiquewhite;
+            border: solid 1px gray;
+        }
+
+        select {
+            height: 30px;
+            background-color: antiquewhite;
+            border: solid 1px gray;
+        }
+    </style>
+</head>
+<body>
+    <%- include ('partials/navbar.ejs') %>
+    <h2>Edit Booking</h2>
+    <img src="/images/<%= bookings.roomType %>.jpeg" width="400px" alt="<%= bookings.roomType %> Room">
+    <form action="/editbooking/<%= bookings.id %>" method="POST"><br>
+        <label for="roomType">Room Type:</label>
+        <select name="roomType" required>
+            <option value="Single" <%= bookings.roomType === 'Single' ? 'selected' : '' %>>Single</option>
+            <option value="Double" <%= bookings.roomType === 'Double' ? 'selected' : '' %>>Double</option>
+            <option value="Queen" <%= bookings.roomType === 'Queen' ? 'selected' : '' %>>Queen</option>
+            <option value="King" <%= bookings.roomType === 'King' ? 'selected' : '' %>>King</option>
+        </select><br>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="<%= bookings.name %>" required><br>
+
+        <label for="contact">Contact:</label>
+        <input type="text" name="contact" value="<%= bookings.contact %>" required><br>
+
+        <label for="guests">Number of Guests:</label>
+        <input type="number" name="guests" value="<%= bookings.guests %>" required><br>
+
+        <label for="checkin">Check-in Date:</label>
+        <input type="date" name="checkin" value="<%= bookings.checkin.toISOString().split('T')[0] %>" required><br>
+
+        <label for="checkout">Check-out Date:</label>
+        <input type="date" name="checkout" value="<%= bookings.checkout.toISOString().split('T')[0] %>" required><br><br>
+
+        <button type="submit">Update Booking</button><br><br><br><br>
+    </form>
+</body>
+</html>

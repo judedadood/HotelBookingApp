@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Booking</title>
+
+    <style>
+        .container {
+            margin-left: 20px;
+        }
+
+        .qwe {
+            display: flex;
+            margin-right: 20px;
+            gap: 20px;
+        }
+
+        button {
+            border-radius: 3px;
+            padding: 5px;
+            width: 150px;
+        }
+
+        .delete {
+            background-color: red;
+            border: solid 1px #333;
+        }
+
+        .delete:hover {
+            background-color: rgb(197, 0, 0);
+        }
+
+        .edit {
+            border: solid 1px #333;
+        }
+
+        .edit:hover {
+            background-color: lightgray;
+        }
+
+        .text-center {
+            text-decoration: underline;
+        }
+
+
+    </style>
+</head>
+<body>
+    <%- include ('partials/navbar.ejs') %>
+
+    <div class="container"><br>
+        <div class="text-center"><h2>Booking Details</h2></div><br>
+
+        <% if (bookings) { %>
+            <h2><%= bookings.roomType %></h2>
+            <div class="qwe">
+                <img src="/images/<%= bookings.roomType %>.jpeg" width="300px" alt="<%= bookings.roomType %> Room">
+                <p><%= bookings.description %></p>
+            </div>
+            <h3>Name: <%= bookings.name %></h3>
+            <h3>Contact: <%= bookings.contact %></h3>
+            <h3>Number of Guests: <%= bookings.guests %></h3>
+            <h3>Check-in Date: <%= new Date(bookings.checkin).toLocaleDateString('en-GB') %></h3>
+            <h3>Check-out Date: <%= new Date(bookings.checkout).toLocaleDateString('en-GB') %></h3><br>
+            <a href="/editbooking/<%= bookings.id %>"><button class="edit">Edit</button></a>
+            <a href="/deletebooking/<%= bookings.id %>" onclick="return confirm('Are you sure you want to delete this booking?')"><button class="delete">Delete</button></a>
+
+        <% } %>
+
+    </div>
+</body>
+</html>

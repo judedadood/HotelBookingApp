@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Hotel Booking</title>
+
+    <style>
+        h1 {
+            margin-left: 20px;
+        }
+
+        img {
+            transition: transform .5s;
+        }
+
+        .room:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+    <div>
+       <%- include ('partials/navbar.ejs') %> 
+    </div>
+    
+    <h1>Select a Room</h1>
+    <div class="rooms">
+        <% rooms.forEach(room => { %>
+            <div class="room">
+                <h3><%= room.type %> Room</h3>
+                <a href="/addbooking/<%= room.type %>">
+                    <img src="images/<%= room.image %>" width="20px" alt="<%= room.type %> Room">
+                </a>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>

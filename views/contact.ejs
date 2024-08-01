@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Hotel Booking</title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        h4 {
+            text-align: center;
+        }
+
+        button {
+            width: 280px;
+            height: 30px;
+            font-size: x-large;
+            margin-left: 210px;
+            background-color: antiquewhite;
+            border: solid 1px gray;
+        }
+
+        form {
+            margin-left: 400px;
+            text-align: center;
+        }
+
+        form {
+            width: 700px;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <%- include ('partials/navbar.ejs') %> 
+
+    <h1>Contact Us</h1>
+    <h4>Leave us a feedback or a review about our services, or our booking website!</h4>
+
+    <div class="form">
+        <form action="/addfeedback" method="POST">
+            <br>
+            <label for="name">Name:</label>
+            <input type="text" name="name" required><br>
+
+            <label for="contact">Contact:</label>
+            <input type="text" name="contact" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br>
+
+            <label for="feedbacks">Feedback:</label>
+            <input type="text" name="feedbacks" required><br>
+
+            <button type="submit">Submit</button><br><br><br><br>
+        </form>
+
+    </div>
+</body>
+</html>

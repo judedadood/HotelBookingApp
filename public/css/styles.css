@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(255, 249, 241);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0; 
+    padding: 0; 
+    background-color: rgb(165, 189, 153);
+}
+
+.nav1 {
+    background-image: url(bg.png);
+}
+
+nav {
+    background-color: antiquewhite;
+    color: rgb(35, 171, 255);
+    padding: 10px;
+    text-align: center;
+    margin: 0; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.navbar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.navbar-header h1,
+.navbar-header h3 {
+    margin: 0; 
+    padding: 0; 
+    line-height: 1.2;
+}
+
+nav h1 {
+    font-size: xx-large;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0; 
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline;
+    font-weight: bold;
+    font-size: larger;
+}
+
+nav ul li:hover {
+    color: rgb(255, 120, 143);
+    text-decoration: underline;
+}
+
+nav ul li a {
+    color: rgb(35, 171, 255);
+    text-decoration: none;
+}
+
+
+.rooms {
+    display: flex;
+    justify-content: space-around;
+}
+
+.room {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    flex-wrap:wrap;
+    background-color: antiquewhite;
+}
+
+.room img {
+    width: 300px;
+    height: 200px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
