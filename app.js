@@ -5,11 +5,15 @@ const app = express();
 
 // Create MySQL connection
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'c237_hotelbookingapp',
-    port: 3307
+    // host: 'localhost',
+    // user: 'root',
+    // password: '',
+    // database: 'c237_hotelbookingapp',
+    // port: 3307
+    host: 'alwaysdata.com',
+    user: '371142',
+    password: 'P@ssword2905!',
+    database: 'judedadood_c237hotelbooking'
 });
 
 
