@@ -10,11 +10,10 @@ const connection = mysql.createConnection({
     // password: '',
     // database: 'c237_hotelbookingapp',
     // port: 3307
-    host: 'alwaysdata.com',
+    host: 'mysql-judedadood.alwaysdata.net',
     user: '371142',
     password: 'P@ssword2905!',
-    database: 'judedadood_c237hotelbooking',
-    port: 3307
+    database: 'judedadood_c237hotelbooking'
 });
 
 
